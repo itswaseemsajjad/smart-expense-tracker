@@ -1,3 +1,11 @@
+/**
+ * CSV export helpers for expense data.
+ *
+ * Note the quoting strategy below: description and merchant fields are wrapped
+ * in double quotes and any embedded quotes are escaped by doubling them (RFC
+ * 4180). This keeps commas and quotes inside free-text fields from corrupting
+ * the column layout when the file is opened in Excel, Sheets, or Numbers.
+ */
 interface Expense {
   id: string
   amount: number
